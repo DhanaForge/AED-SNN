@@ -1,0 +1,16 @@
+{
+  "name": "aed-snn-backend",
+  "version": "0.2.0",
+  "description": "API Bridge for Adaptive Event-Driven Spiking Neural Network Simulator (AED-SNN)",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "ws": "^8.21.3"
+  }
+}
