@@ -85,6 +85,7 @@ export default function LiveSimulation({
           onRunComplete={onRunSimulation}
           isRunning={isRunning}
           setIsRunning={setIsRunning}
+          backendStatus={backendStatus}
         />
       </section>
 

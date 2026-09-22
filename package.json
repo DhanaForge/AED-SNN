@@ -1,0 +1,13 @@
+{
+  "name": "aed-snn-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AED-SNN monorepo workspace runner",
+  "scripts": {
+    "build": "npm --prefix ./frontend run build",
+    "dev": "npm --prefix ./frontend run dev",
+    "start": "node ./backend/server.js",
+    "start:backend": "node ./backend/server.js",
+    "start:frontend": "npm --prefix ./frontend run dev"
+  }
+}

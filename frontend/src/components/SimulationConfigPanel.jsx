@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function SimulationConfigPanel({ onRunComplete, isRunning, setIsRunning }) {
+export default function SimulationConfigPanel({ onRunComplete, isRunning, setIsRunning, backendStatus }) {
   const [neurons, setNeurons] = useState(3);
   const [simulationTime, setSimulationTime] = useState(30.0);
   const [dt, setDt] = useState(1.0);
@@ -287,7 +287,13 @@ export default function SimulationConfigPanel({ onRunComplete, isRunning, setIsR
         <div className="config-action-row">
           <div className="action-meta">
             <span className="meta-hint mono">
-              Target Binary: <code>build/aed_snn.exe</code> | Bridge: <code>http://localhost:3000</code>
+              {backendStatus?.status === 'ready' ? (
+                <>Target Binary: <code>build/aed_snn.exe</code> | Bridge: <code>http://localhost:3000</code></>
+              ) : backendStatus?.status === 'client_engine' ? (
+                <>Engine: <code>Biological LIF In-Browser Engine</code> | Mode: <code>Cloud Standalone</code></>
+              ) : (
+                <>Engine: <code>AED-SNN Simulator</code> | Dual Regime: <code>Adaptive LIF</code></>
+              )}
             </span>
           </div>
 

@@ -10,6 +10,7 @@ export default function Topbar({
   bridgeStatus,
 }) {
   const isBridgeReady = bridgeStatus?.status === 'ready';
+  const isClientEngine = bridgeStatus?.status === 'client_engine';
 
   return (
     <header className="topbar">
@@ -18,7 +19,11 @@ export default function Topbar({
         <div className="title-row">
           <h2 className="topbar-title">{activePage}</h2>
           <span className="research-badge">
-            {isBridgeReady ? 'BRIDGE CONNECTED (:3000)' : 'LAB VERIFIED'}
+            {isBridgeReady
+              ? 'BRIDGE CONNECTED (:3000)'
+              : isClientEngine
+              ? 'STANDALONE CLOUD SNN'
+              : 'LAB VERIFIED'}
           </span>
         </div>
       </div>
@@ -41,10 +46,12 @@ export default function Topbar({
         </div>
 
         <div className="topbar-status-badge">
-          <span className={`status-dot ${isConnected ? 'dot-active' : 'dot-error'}`} />
+          <span className={`status-dot ${isBridgeReady || isClientEngine || isConnected ? 'dot-active' : 'dot-error'}`} />
           <span>
             {isBridgeReady
               ? 'API BRIDGE ACTIVE (:3000)'
+              : isClientEngine
+              ? 'IN-BROWSER ENGINE ACTIVE'
               : isConnected
               ? 'BACKEND DATA CONNECTED'
               : 'DATA FEED OFFLINE'}

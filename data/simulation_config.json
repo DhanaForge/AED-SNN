@@ -1,7 +1,7 @@
 {
-  "neurons": 44,
-  "simulation_time": 90,
-  "dt": 5,
+  "neurons": 3,
+  "simulation_time": 30,
+  "dt": 1,
   "low_threshold": 0.3,
   "high_threshold": 1,
   "adaptation_window": 5,

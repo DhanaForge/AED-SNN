@@ -193,9 +193,9 @@ function App() {
             <div className="spinner-orbit">
               <div className="orbit-core" />
             </div>
-            <h3 className="mono">CONNECTING TO SIMULATION ENGINE</h3>
+            <h3 className="mono">INITIALIZING SIMULATION WORKSTATION</h3>
             <p>
-              Establishing connection to C++ AED-SNN Bridge at <code>http://localhost:3000</code>...
+              Loading neural network configuration and initializing simulation engines...
             </p>
           </div>
         </div>
@@ -231,6 +231,7 @@ function App() {
             onRunSimulation={handleRunSimulation}
             isRunning={isRunning}
             setIsRunning={setIsRunning}
+            bridgeStatus={bridgeStatus}
             liveActiveNeurons={liveActiveNeurons}
             liveActiveSynapses={liveActiveSynapses}
             liveSpikeCounts={liveSpikeCounts}

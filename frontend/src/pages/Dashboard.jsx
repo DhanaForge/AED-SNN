@@ -12,6 +12,7 @@ export default function Dashboard({
   onRunSimulation,
   isRunning,
   setIsRunning,
+  bridgeStatus,
 }) {
   if (!data) return null;
 
@@ -120,6 +121,7 @@ export default function Dashboard({
           onRunComplete={onRunSimulation}
           isRunning={isRunning}
           setIsRunning={setIsRunning}
+          backendStatus={bridgeStatus}
         />
       </section>
 
